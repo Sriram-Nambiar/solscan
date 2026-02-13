@@ -2,8 +2,7 @@ import { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
-import { WalletScreen } from "./src/screens/WalletScreen";
-import { SwapScreen } from "./src/screens/SwapScreen";
+
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<"wallet" | "swap">("wallet");
@@ -11,7 +10,7 @@ export default function App() {
     <SafeAreaProvider>
       <SafeAreaView style={s.safe}>
         {/* Screen Switcher */}
-        {activeTab === "wallet" ? <WalletScreen /> : <SwapScreen />}
+        {/* {activeTab === "wallet" ? <WalletScreen /> : <SwapScreen />} */}
 
         {/* Bottom Tab Bar */}
         <View style={s.tabBar}>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useRouter } from "expo-router";
 import {
   View,
   Text, // 💡 Web: <p>, <h1>, <span> → RN: everything is <Text>
@@ -77,7 +78,8 @@ const timeAgo = (ts: number) => {
 // App
 // ============================================
 
-export  function WalletScreen() {
+export default function WalletScreen() {
+    const router = useRouter();
   const [address, setAddress] = useState("");
   const [loading, setLoading] = useState(false);
   const [balance, setBalance] = useState<number | null>(null);
@@ -176,10 +178,10 @@ export  function WalletScreen() {
               keyExtractor={(t) => t.mint}
               scrollEnabled={false}
               renderItem={({ item }) => (
-                <View style={s.row}>
+                <TouchableOpacity style={s.row} onPress={() => router.push(`/token/${item.mint}`)}>
                   <Text style={s.mint}>{short(item.mint, 6)}</Text>
                   <Text style={s.amount}>{item.amount}</Text>
-                </View>
+                </TouchableOpacity>
               )}
             />
           </>
