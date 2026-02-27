@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 export default function explorer() {
   return (
     <SafeAreaView style={styles.safe}>
-      <Text>explore  !!!!!!!</Text>
+      <Text>Explore </Text>
     </SafeAreaView>
   )
 }
